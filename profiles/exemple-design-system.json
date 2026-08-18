@@ -1,0 +1,144 @@
+{
+  "slug": "exemple-design-system",
+  "offer": {
+    "title": "Product Designer — Design System",
+    "company": "(annonce de démonstration)",
+    "notes": "Exemple livré avec le dépôt : annonce fictive, mots-clés produits par `npm run tailor`.\nCe que le ciblage change par rapport au CV maître : le groupe « UI Design & Design System » et les puces Figma / accessibilité remontent, le projet Wakey passe derrière.\nDemandé par l'annonce, absent du CV : Framer Motion. Non comblé automatiquement — à traiter en lettre de motivation, ou à acquérir."
+  },
+  "headline": "UX/Ui designer",
+  "keywords": [
+    {
+      "term": "design",
+      "weight": 1
+    },
+    {
+      "term": "design system",
+      "weight": 1
+    },
+    {
+      "term": "composants",
+      "weight": 0.9
+    },
+    {
+      "term": "accessibilite",
+      "weight": 0.75
+    },
+    {
+      "term": "css",
+      "weight": 0.75
+    },
+    {
+      "term": "figma",
+      "weight": 0.75
+    },
+    {
+      "term": "front-end",
+      "weight": 0.75
+    },
+    {
+      "term": "librairies",
+      "weight": 0.75
+    },
+    {
+      "term": "recherche",
+      "weight": 0.75
+    },
+    {
+      "term": "variantes",
+      "weight": 0.75
+    },
+    {
+      "term": "analytics",
+      "weight": 0.55
+    },
+    {
+      "term": "atomic design",
+      "weight": 0.55
+    },
+    {
+      "term": "co-conception",
+      "weight": 0.55
+    },
+    {
+      "term": "culture",
+      "weight": 0.55
+    },
+    {
+      "term": "design inclusif",
+      "weight": 0.55
+    },
+    {
+      "term": "developpement",
+      "weight": 0.55
+    },
+    {
+      "term": "documentation",
+      "weight": 0.55
+    },
+    {
+      "term": "html",
+      "weight": 0.55
+    },
+    {
+      "term": "interviews",
+      "weight": 0.55
+    },
+    {
+      "term": "next.js",
+      "weight": 0.55
+    },
+    {
+      "term": "produit",
+      "weight": 0.55
+    },
+    {
+      "term": "prototypage",
+      "weight": 0.55
+    },
+    {
+      "term": "questionnaires",
+      "weight": 0.55
+    },
+    {
+      "term": "react",
+      "weight": 0.55
+    },
+    {
+      "term": "recherche utilisateur",
+      "weight": 0.55
+    },
+    {
+      "term": "rgaa",
+      "weight": 0.55
+    },
+    {
+      "term": "specifications",
+      "weight": 0.55
+    },
+    {
+      "term": "storybook",
+      "weight": 0.55
+    },
+    {
+      "term": "tailwind",
+      "weight": 0.55
+    },
+    {
+      "term": "tests",
+      "weight": 0.55
+    },
+    {
+      "term": "wcag",
+      "weight": 0.55
+    }
+  ],
+  "limits": {
+    "experiences": 3,
+    "projects": 2,
+    "education": 3,
+    "skillGroups": 4,
+    "bulletsPerItem": 2,
+    "skillsPerGroup": 7
+  },
+  "density": 1
+}

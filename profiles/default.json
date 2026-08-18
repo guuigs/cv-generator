@@ -1,0 +1,18 @@
+{
+  "slug": "default",
+  "offer": {
+    "title": "CV maître (sans offre)",
+    "company": "—",
+    "notes": "Profil de référence : aucun mot-clé, aucune exclusion. Il rend l'intégralité du contenu validé et sert d'étalon visuel face au PDF d'origine."
+  },
+  "keywords": [],
+  "limits": {
+    "experiences": 3,
+    "projects": 2,
+    "education": 3,
+    "skillGroups": 4,
+    "bulletsPerItem": 3,
+    "skillsPerGroup": 7
+  },
+  "density": 1
+}

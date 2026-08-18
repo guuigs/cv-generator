@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ */
+/* Jetons de design                                                    */
+/* Mesurés au point près sur le CV de référence (A4 595,28 × 841,89pt).*/
+/* Toutes les valeurs sont en pt : 1 pt sur l'écran = 1 pt sur le PDF. */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-departure-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  --color-ink: #000000;
+  --color-muted: #747474;
+  --color-faint: #a9a9a9;
+  --color-rule: #e4e4e4;
+  --color-paper: #ffffff;
+  --color-desk: #eceae6;
+}
+
+:root {
+  /* Page */
+  --page-w: 595.28pt;
+  --page-h: 841.89pt;
+  --page-margin: 25pt;
+
+  /* Densité : 1 = fidèle à la référence. Le profil peut la resserrer. */
+  --density: 1;
+
+  /* Échelle typographique */
+  --t-name: 24pt;
+  --t-title: 14pt;
+  --t-item: 10pt;
+  --t-body: 8pt;
+  --t-meta: 8pt;
+  --t-micro: 6.5pt;
+
+  /* Rythme vertical */
+  --lh-body: 12pt;
+  --lh-item: 15pt;
+  --gap-section: calc(21pt * var(--density));
+  --gap-title: calc(13pt * var(--density));
+  --gap-entry: calc(11.5pt * var(--density));
+  --gap-bullets: calc(3pt * var(--density));
+
+  /* Grilles */
+  --col-date: 72pt;
+  --bullet-indent: 12pt;
+  --portrait-size: 111pt;
+  --portrait-gap: 20pt;
+}
+
+/* La police pixel DepartureMono ne doit jamais être lissée en gras
+   synthétique : on force la graisse réelle. */
+@font-face { font-synthesis: none; }
+
+html, body { background: var(--color-desk); }
+
+body {
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+}
+
+/* ------------------------------------------------------------------ */
+/* Feuille A4                                                          */
+/* ------------------------------------------------------------------ */
+.cv-page {
+  position: relative;
+  width: var(--page-w);
+  min-height: var(--page-h);
+  padding: var(--page-margin);
+  background: var(--color-paper);
+  color: var(--color-ink);
+  /* La hauteur d'une page est une contrainte de design, pas un accident :
+     le repère ci-dessous matérialise la limite à l'écran. */
+  box-shadow: 0 1pt 3pt rgb(0 0 0 / 0.06), 0 12pt 32pt rgb(0 0 0 / 0.10);
+}
+
+.cv-page::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: var(--page-h);
+  border-top: 0.5pt dashed color-mix(in srgb, var(--color-muted) 45%, transparent);
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------------------ */
+/* Impression / export PDF                                             */
+/* ------------------------------------------------------------------ */
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  html, body { background: #fff; }
+  .no-print { display: none !important; }
+  .cv-page {
+    box-shadow: none;
+    margin: 0;
+    width: var(--page-w);
+    height: var(--page-h);
+    break-after: page;
+  }
+  .cv-page::after { display: none; }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+/* Rien ne doit se couper au milieu d'une entrée. */
+.cv-entry { break-inside: avoid; }

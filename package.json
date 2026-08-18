@@ -1,0 +1,36 @@
+{
+  "name": "cv-generator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "tailor": "tsx scripts/tailor.ts",
+    "pdf": "tsx scripts/export-pdf.ts",
+    "verify": "tsx scripts/verify.ts",
+    "calibrate": "tsx scripts/measure.ts",
+    "check": "npm run typecheck && npm run verify && npm run build"
+  },
+  "dependencies": {
+    "geist": "^1.7.2",
+    "next": "^15.5.23",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
+    "@types/node": "^26.2.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "cheerio": "^1.2.0",
+    "playwright-core": "^1.62.1",
+    "postcss": "^8.5.26",
+    "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.12",
+    "typescript": "^5.9.3",
+    "zod": "^4.4.3"
+  }
+}

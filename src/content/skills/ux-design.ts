@@ -31,6 +31,8 @@ export const uxDesign: SkillGroupBlock = {
       tags: ["cadrage", "cadrage fonctionnel", "perimetre", "scoping", "priorisation"] },
     { kind: "skill", id: "skill.needs-gathering", group: "skills.ux", label: "Recueil de besoins", weight: 0.45,
       tags: ["recueil de besoins", "besoins", "expression de besoin", "entretiens metier"] },
+    { kind: "skill", id: "skill.rgpd", group: "skills.ux", label: "Conformité RGPD", weight: 0.45,
+      tags: ["rgpd", "conformite", "donnees personnelles", "gdpr", "privacy"] },
     { kind: "skill", id: "skill.functional-testing", group: "skills.ux", label: "Recette et tests fonctionnels", weight: 0.4,
       tags: ["recette", "tests fonctionnels", "qa", "validation", "tests"] },
   ],

@@ -34,13 +34,16 @@ export function CvHeader({ identity, headline }: { identity: Identity; headline:
           {headline}
         </p>
 
-        <div style={{ marginTop: "9pt", display: "flex", flexDirection: "column", gap: "2pt" }}>
+        {/* Ligne de contact en Geist 9 pt : arbitrage de Guilhem sur maquette.
+            Le mono y coûtait de la lisibilité sans rien apporter — ce sont des
+            mots, pas des codes. Les dates et organisations, elles, restent mono. */}
+        <div style={{ marginTop: "9pt", display: "flex", flexDirection: "column", gap: "1pt" }}>
           {lines.map((line, i) => (
-            <div key={i} style={{ lineHeight: "11pt" }}>
+            <div key={i} style={{ lineHeight: "12pt", fontSize: "9pt" }}>
               {line.map((c, j) => (
                 <span key={c.id}>
                   {j > 0 ? <Pipe /> : null}
-                  <Meta tone="ink">{c.label}</Meta>
+                  {c.label}
                 </span>
               ))}
             </div>

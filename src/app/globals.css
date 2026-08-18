@@ -33,6 +33,9 @@
   --t-body: 8pt;
   --t-meta: 8pt;
   --t-micro: 6.5pt;
+  /* Inventaire de compétences : Geist plutôt que mono, cf. SkillGroup.tsx */
+  --t-skill: 8.25pt;
+  --lh-skill: 11pt;
 
   /* Rythme vertical */
   --lh-body: 12pt;

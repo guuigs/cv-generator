@@ -14,7 +14,7 @@ export const inrap: ExperienceBlock = {
   pinned: true,
   tags: [
     "ux", "ui", "refonte", "site web", "institution", "figma", "wireframe",
-    "specifications", "accessibilite", "rgaa", "rgpd", "front-end", "cartographie",
+    "specifications", "front-end", "cartographie",
     "recherche utilisateur", "coordination", "audit ux", "secteur public",
   ],
   bullets: [
@@ -32,9 +32,9 @@ export const inrap: ExperienceBlock = {
       // (blocage administratif). La puce ne revendique donc que le travail réalisé :
       // ne jamais y ajouter « lancée », « mise en ligne » ni de lien.
       id: "exp.inrap.b2",
-      tags: ["cartographie", "recherche utilisateur", "cadrage", "prototypage", "figma", "front-end", "rgpd", "rgaa", "accessibilite", "architecture technique"],
+      tags: ["cartographie", "recherche utilisateur", "cadrage", "prototypage", "figma", "front-end", "architecture technique"],
       text:
-        "Conception et développement de Megacarte, plateforme contributive de cartographie : recherche utilisateur, cadrage fonctionnel, prototypage Figma, architecture technique et développement front-end (conformité RGPD, accessibilité RGAA).",
+        "Conception et développement de Megacarte, plateforme contributive de cartographie : recherche utilisateur, cadrage fonctionnel, prototypage Figma, architecture technique et développement front-end.",
       short:
         "Conception et développement de Megacarte, plateforme contributive de cartographie : recherche utilisateur, cadrage fonctionnel, prototypage Figma et développement front-end.",
       weight: 0.9,

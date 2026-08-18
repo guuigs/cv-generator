@@ -14,7 +14,7 @@ export const c2rmf: ExperienceBlock = {
   pinned: true,
   tags: [
     "ux research", "recherche utilisateur", "analytics", "architecture de l'information",
-    "seo", "accessibilite", "cms", "drupal", "webmaster", "atelier", "co-conception",
+    "seo", "accessibilite", "rgaa", "rgpd", "conformite", "cms", "drupal", "webmaster", "atelier", "co-conception",
     "specifications", "secteur public", "musee", "culture", "trafic",
   ],
   bullets: [
@@ -24,16 +24,16 @@ export const c2rmf: ExperienceBlock = {
       // Le chiffre passe en tête : c'est le seul résultat mesuré du CV,
       // il ne doit pas se lire en fin de troisième phrase.
       text:
-        "+100 % de trafic en 2 ans : analyse des comportements utilisateurs (analytics), restructuration de l'architecture d'information et optimisation de l'accessibilité et du référencement de l'ensemble des pages du site.",
+        "+100 % de trafic en 2 ans : analyse des comportements utilisateurs (analytics), restructuration de l'architecture d'information et optimisation de l'accessibilité (RGAA) et du référencement de l'ensemble des pages du site.",
       short:
         "+100 % de trafic en 2 ans : analyse des comportements utilisateurs (analytics) et restructuration de l'architecture d'information du site.",
       weight: 1,
     },
     {
       id: "exp.c2rmf.b2",
-      tags: ["atelier", "co-conception", "cms", "drupal", "recueil de besoins", "specifications", "tests", "collaboration"],
+      tags: ["atelier", "co-conception", "cms", "drupal", "recueil de besoins", "specifications", "tests", "collaboration", "rgpd", "conformite", "donnees personnelles"],
       text:
-        "Participation aux ateliers de co-conception avec l'institution et le prestataire pour améliorer le CMS (Drupal) : recueil de besoins, spécifications fonctionnelles, tests.",
+        "Participation aux ateliers de co-conception avec l'institution et le prestataire pour améliorer le CMS (Drupal) : recueil de besoins, spécifications fonctionnelles, tests, conformité RGPD.",
       short:
         "Participation aux ateliers de co-conception pour améliorer le CMS (Drupal) : recueil de besoins, spécifications fonctionnelles, tests.",
       weight: 0.8,

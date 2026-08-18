@@ -12,7 +12,8 @@
     "pdf": "tsx scripts/export-pdf.ts",
     "verify": "tsx scripts/verify.ts",
     "calibrate": "tsx scripts/measure.ts",
-    "check": "npm run typecheck && npm run verify && npm run build"
+    "check": "npm run typecheck && npm run verify && npm run build",
+    "dump-model": "tsx scripts/dump-model.ts"
   },
   "dependencies": {
     "geist": "^1.7.2",

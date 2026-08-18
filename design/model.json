@@ -1,0 +1,146 @@
+{
+  "slug": "default",
+  "identity": {
+    "name": "Guilhem Terrier",
+    "portfolio": {
+      "label": "Portfolio",
+      "href": "https://guilhemterrier.com"
+    },
+    "contacts": [
+      [
+        "06 61 55 28 34",
+        "guilhemtr@proton.me",
+        "linkedin.com/in/guilhemterrier"
+      ],
+      [
+        "Lyon, France",
+        "Disponible à partir de septembre 2026"
+      ],
+      [
+        "Français (natif)",
+        "Anglais (B2 - 820 TOEIC)"
+      ]
+    ]
+  },
+  "headline": "UX/UI designer - brand designer - graphic designer",
+  "skillGroups": [
+    {
+      "title": "UX Design",
+      "skills": [
+        "Recherche utilisateur (interviews, tests, questionnaires)",
+        "User flows",
+        "Wireframing",
+        "Prototypage",
+        "Design inclusif",
+        "Accessibilité (RGAA)",
+        "Audit UX"
+      ]
+    },
+    {
+      "title": "UI Design & Design System",
+      "skills": [
+        "Figma (composants, variantes, librairies, prototypage)",
+        "Charte graphique",
+        "Atomic Design",
+        "Documentation de composants",
+        "Conception d'un design system complet",
+        "Packaging"
+      ]
+    },
+    {
+      "title": "Développement front-end",
+      "skills": [
+        "HTML5 / CSS3",
+        "JavaScript / TypeScript",
+        "React (Next.js)",
+        "Tailwind CSS",
+        "Supabase",
+        "Git/GitHub",
+        "Modélisation de base de données relationnelle"
+      ]
+    },
+    {
+      "title": "Méthodologies & outils",
+      "skills": [
+        "Ateliers de co-conception",
+        "Analyse d'usages (analytics)",
+        "Claude Code",
+        "Figma",
+        "Supabase",
+        "Référencement (SEO)",
+        "Conception de produit à base de LLM"
+      ]
+    }
+  ],
+  "experiences": [
+    {
+      "role": "UX/UI Designer",
+      "contract": "Alternance",
+      "org": "INRAP (Institut National de Recherches Archéologiques Préventives) · Paris",
+      "dates": "2025 – 2026",
+      "bullets": [
+        "Pilotage UX de la refonte de 3 sites web institutionnels (portail, iconothèque, Journées Européennes de l'Archéologie) : audit UX, wireframes, maquettes Figma, spécifications fonctionnelles, coordination designers / développeurs et suivi de l'implémentation.",
+        "Conception et développement de Megacarte, plateforme contributive de cartographie : recherche utilisateur, cadrage fonctionnel, prototypage Figma, architecture technique et développement front-end."
+      ]
+    },
+    {
+      "role": "Brand designer",
+      "contract": "Freelance",
+      "org": "Elapsio · Lyon",
+      "dates": "2025",
+      "bullets": [
+        "Création d'une charte graphique complète (identité visuelle, guidelines) et conception de packaging pour le lancement commercial de la marque."
+      ]
+    },
+    {
+      "role": "UX researcher / Webmaster",
+      "contract": "Alternance",
+      "org": "C2RMF (Centre de Recherche et de Restauration des Musées de France) · Paris",
+      "dates": "2023 – 2025",
+      "bullets": [
+        "+100 % de trafic en 2 ans : analyse des comportements utilisateurs (analytics), restructuration de l'architecture d'information et optimisation de l'accessibilité (RGAA) et du référencement de l'ensemble des pages du site.",
+        "Participation aux ateliers de co-conception avec l'institution et le prestataire pour améliorer le CMS (Drupal) : recueil de besoins, spécifications fonctionnelles, tests, conformité RGPD.",
+        "Refonte des processus de publication en lien avec les différents départements scientifiques du centre."
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "title": "TheBookClub.cafe",
+      "subtitle": "Plateforme sociale de découverte de livres",
+      "dates": "2026",
+      "bullets": [
+        "Conception UX/UI et développement complet d'une application web type Letterboxd pour les livres : design des parcours utilisateurs, prototypage Figma, architecture de la base de données relationnelle, intégration de l'API Google Books, et développement front-end."
+      ]
+    },
+    {
+      "title": "Wakey",
+      "subtitle": "Application mobile de résumé d'actualité par IA",
+      "dates": "2025",
+      "bullets": [
+        "Conception, design et développement complet d'une app mobile iOS de synthèse quotidienne de l'actualité par intelligence artificielle : sélection de thématiques par l'utilisateur, génération de résumés personnalisés via l'API Perplexity.",
+        "Création d'un design system dédié, conception d'un modèle freemium avec gestion des niveaux d'accès et autorisations différenciées. Projet réalisé en totale autonomie, de la conception UX au déploiement sur l'App Store."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Master Design d'Interface multimédia et internet",
+      "school": "Université Sorbonne Paris Nord",
+      "tag": null,
+      "dates": "2024 – 2026"
+    },
+    {
+      "degree": "Bachelor Communication",
+      "school": "Sup' de Com Paris",
+      "tag": null,
+      "dates": "2021 – 2024"
+    },
+    {
+      "degree": "Licence Histoire",
+      "school": "Université Paris Nanterre",
+      "tag": "En parallèle du Bachelor",
+      "dates": "2022 – 2024"
+    }
+  ]
+}

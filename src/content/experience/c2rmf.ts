@@ -15,16 +15,18 @@ export const c2rmf: ExperienceBlock = {
   tags: [
     "ux research", "recherche utilisateur", "analytics", "architecture de l'information",
     "seo", "accessibilite", "cms", "drupal", "webmaster", "atelier", "co-conception",
-    "specifications", "secteur public", "musee", "culture",
+    "specifications", "secteur public", "musee", "culture", "trafic",
   ],
   bullets: [
     {
       id: "exp.c2rmf.b1",
-      tags: ["analytics", "architecture de l'information", "seo", "accessibilite", "trafic", "mesure", "data"],
+      tags: ["analytics", "architecture de l'information", "seo", "accessibilite", "trafic", "mesure", "data", "resultat"],
+      // Le chiffre passe en tête : c'est le seul résultat mesuré du CV,
+      // il ne doit pas se lire en fin de troisième phrase.
       text:
-        "Analyse des comportements utilisateurs (analytics) et restructuration de l'architecture d'information du site. Optimisation de l'accessibilité et du référencement de l'ensemble des pages du site. Aboutissant à une augmentation du trafic de +100 % en 2 ans.",
+        "+100 % de trafic en 2 ans : analyse des comportements utilisateurs (analytics), restructuration de l'architecture d'information et optimisation de l'accessibilité et du référencement de l'ensemble des pages du site.",
       short:
-        "Analyse des comportements utilisateurs (analytics) et restructuration de l'architecture d'information du site. Aboutissant à une augmentation du trafic de +100 % en 2 ans.",
+        "+100 % de trafic en 2 ans : analyse des comportements utilisateurs (analytics) et restructuration de l'architecture d'information du site.",
       weight: 1,
     },
     {

@@ -20,5 +20,18 @@ export const uxDesign: SkillGroupBlock = {
       tags: ["design inclusif", "inclusive design", "accessibilite", "ux"] },
     { kind: "skill", id: "skill.a11y", group: "skills.ux", label: "Accessibilité (RGAA)", weight: 0.7,
       tags: ["accessibilite", "rgaa", "rgesn", "wcag", "a11y", "accessibility"] },
+
+    /* Prouvées par les puces d'expérience, jamais nommées jusqu'ici.
+       Poids volontairement bas : elles ne remontent que si l'annonce les demande. */
+    { kind: "skill", id: "skill.ux-audit", group: "skills.ux", label: "Audit UX", weight: 0.5,
+      tags: ["audit ux", "audit", "evaluation heuristique", "diagnostic", "ux"] },
+    { kind: "skill", id: "skill.information-architecture", group: "skills.ux", label: "Architecture de l'information", weight: 0.5,
+      tags: ["architecture de l'information", "arborescence", "taxonomie", "navigation", "ia"] },
+    { kind: "skill", id: "skill.scoping", group: "skills.ux", label: "Cadrage fonctionnel", weight: 0.45,
+      tags: ["cadrage", "cadrage fonctionnel", "perimetre", "scoping", "priorisation"] },
+    { kind: "skill", id: "skill.needs-gathering", group: "skills.ux", label: "Recueil de besoins", weight: 0.45,
+      tags: ["recueil de besoins", "besoins", "expression de besoin", "entretiens metier"] },
+    { kind: "skill", id: "skill.functional-testing", group: "skills.ux", label: "Recette et tests fonctionnels", weight: 0.4,
+      tags: ["recette", "tests fonctionnels", "qa", "validation", "tests"] },
   ],
 };

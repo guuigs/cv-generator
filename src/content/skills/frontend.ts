@@ -3,7 +3,7 @@ import type { SkillGroupBlock } from "@/lib/types";
 export const frontend: SkillGroupBlock = {
   kind: "skillGroup",
   id: "skills.front",
-  title: "Développement front-end (assisté par IA)",
+  title: "Développement front-end",
   weight: 0.8,
   tags: ["front-end", "frontend", "developpement", "integration", "code", "react", "next.js"],
   skills: [
@@ -19,5 +19,13 @@ export const frontend: SkillGroupBlock = {
       tags: ["supabase", "postgres", "base de donnees", "backend"] },
     { kind: "skill", id: "skill.git", group: "skills.front", label: "Git/GitHub", weight: 0.7,
       tags: ["git", "github", "versioning"] },
+
+    /* Prouvées par TheBookClub et Wakey. */
+    { kind: "skill", id: "skill.relational-db", group: "skills.front", label: "Modélisation de base de données relationnelle", weight: 0.5,
+      tags: ["base de donnees", "relationnel", "sql", "postgres", "modelisation", "schema"] },
+    { kind: "skill", id: "skill.api-integration", group: "skills.front", label: "Intégration d'API tierces", weight: 0.5,
+      tags: ["api", "rest", "integration", "webservice"] },
+    { kind: "skill", id: "skill.ios", group: "skills.front", label: "Développement iOS et publication App Store", weight: 0.45,
+      tags: ["ios", "mobile", "app store", "application mobile", "swift"] },
   ],
 };

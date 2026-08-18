@@ -8,11 +8,11 @@ import type { Identity } from "@/lib/types";
 export const identity: Identity = {
   name: "Guilhem Terrier",
 
-  defaultHeadline: "UX/Ui designer - brand designer - graphic designer",
+  defaultHeadline: "UX/UI designer - brand designer - graphic designer",
   headlines: [
-    "UX/Ui designer - brand designer - graphic designer",
-    "UX/Ui designer - brand designer",
-    "UX/Ui designer",
+    "UX/UI designer - brand designer - graphic designer",
+    "UX/UI designer - brand designer",
+    "UX/UI designer",
     "Brand designer - graphic designer",
   ],
 
@@ -24,7 +24,7 @@ export const identity: Identity = {
     { id: "email", label: "guilhemtr@proton.me", href: "mailto:guilhemtr@proton.me", line: 1 },
     { id: "linkedin", label: "linkedin.com/in/guilhemterrier", href: "https://linkedin.com/in/guilhemterrier", line: 1 },
     { id: "location", label: "Lyon, France", line: 2 },
-    { id: "availability", label: "Disponible à partir de Septembre 2026", line: 2 },
+    { id: "availability", label: "Disponible à partir de septembre 2026", line: 2 },
     { id: "lang-fr", label: "Français (natif)", line: 3 },
     { id: "lang-en", label: "Anglais (B2 - 820 TOEIC)", line: 3 },
   ],

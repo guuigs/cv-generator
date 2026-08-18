@@ -1,5 +1,10 @@
 import type { ProjectBlock } from "@/lib/types";
 
+/**
+ * L'app a bien été publiée sur l'App Store, puis retirée : il n'en reste que
+ * les captures. Le déploiement est donc énoncé au passé et sans lien — ne jamais
+ * ajouter d'URL App Store ni écrire que l'app est disponible.
+ */
 export const wakey: ProjectBlock = {
   kind: "project",
   id: "proj.wakey",

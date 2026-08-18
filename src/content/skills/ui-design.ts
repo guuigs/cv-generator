@@ -15,5 +15,11 @@ export const uiDesign: SkillGroupBlock = {
       tags: ["atomic design", "design system", "ui"] },
     { kind: "skill", id: "skill.component-docs", group: "skills.ui", label: "Documentation de composants", weight: 0.6,
       tags: ["documentation", "design system", "composants", "storybook"] },
+
+    /* Prouvées par Wakey et Elapsio. */
+    { kind: "skill", id: "skill.design-system-build", group: "skills.ui", label: "Conception d'un design system complet", weight: 0.55,
+      tags: ["design system", "conception", "fondations", "tokens", "systeme"] },
+    { kind: "skill", id: "skill.packaging", group: "skills.ui", label: "Packaging", weight: 0.4,
+      tags: ["packaging", "print", "edition", "branding", "produit physique"] },
   ],
 };

@@ -71,6 +71,8 @@ export interface EducationBlock extends BaseBlock {
   school: string;
   start: string;
   end: string;
+  /** Mention courte affichée en mono capitale — « en parallèle du Bachelor ». */
+  tag?: string;
   pinned?: boolean;
 }
 

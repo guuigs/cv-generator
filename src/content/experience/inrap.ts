@@ -28,6 +28,9 @@ export const inrap: ExperienceBlock = {
       weight: 1,
     },
     {
+      // Megacarte a été conçue et développée, mais l'INRAP ne l'a jamais publiée
+      // (blocage administratif). La puce ne revendique donc que le travail réalisé :
+      // ne jamais y ajouter « lancée », « mise en ligne » ni de lien.
       id: "exp.inrap.b2",
       tags: ["cartographie", "recherche utilisateur", "cadrage", "prototypage", "figma", "front-end", "rgpd", "rgaa", "accessibilite", "architecture technique"],
       text:

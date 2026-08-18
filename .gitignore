@@ -6,3 +6,6 @@ next-env.d.ts
 .DS_Store
 .env*.local
 /export
+
+# Canvas assemblé (2,4 Mo) — régénérable depuis les sources design/
+design/cv-mise-en-page.html

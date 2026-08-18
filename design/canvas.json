@@ -1,0 +1,31 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html",     "title": "CV — page A4",            "x": 0,    "y": 0, "w": 794, "h": 1123, "print": "fixed" },
+    { "file": "Grille.dc.html",   "title": "Grille & marges",         "x": 884,  "y": 0, "w": 794, "h": 1123, "print": "fixed" },
+    { "file": "Typo.dc.html",     "title": "Système typographique",   "x": 1768, "y": 0, "w": 880, "h": 1240, "print": "fixed" },
+    { "file": "Anatomie.dc.html", "title": "Anatomie d'une entrée",   "x": 2738, "y": 0, "w": 940, "h": 700,  "print": "fixed" }
+  ],
+  "annotations": [
+    {
+      "id": "q-competences",
+      "x": 0, "y": -250, "w": 380,
+      "text": "Q1 — Les compétences sont en DepartureMono 6,8 pt.\nC'est le plancher de lisibilité, imposé par la largeur du mono pour tenir sur une page.\n\nLe sélecteur au-dessus de cette planche bascule en Geist 8 pt : essaie les deux, dis-moi lequel tu gardes."
+    },
+    {
+      "id": "q-grille",
+      "x": 884, "y": -250, "w": 380,
+      "text": "Q2 — Deux décisions de grille à valider :\n\n· gouttière de 7 pt seulement entre les colonnes de compétences — trop serrée ?\n· colonne de dates fixe à 72 pt, fer à droite : ça aligne tout, mais ça creuse un couloir vide au milieu de la page."
+    },
+    {
+      "id": "q-typo",
+      "x": 1768, "y": -250, "w": 380,
+      "text": "Q3 — La règle que j'ai posée : Geist porte le sens, DepartureMono porte le contexte.\n\nLe cas limite, c'est l'organisation (C2RMF, INRAP) : nom propre, donc plutôt du sens — mais je l'ai passée en mono parce qu'elle se lit en diagonale. À trancher."
+    },
+    {
+      "id": "q-anatomie",
+      "x": 2738, "y": -250, "w": 380,
+      "text": "Q4 — Les trois signes de section (étoile, étincelle, triangle) viennent de ton PDF, redessinés en SVG.\n\nIls sont purement décoratifs : ils ne hiérarchisent rien. On les garde, on les uniformise, ou on les supprime ?"
+    }
+  ],
+  "launch": { "view": "canvas" }
+}

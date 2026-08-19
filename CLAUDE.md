@@ -22,8 +22,11 @@ Concrètement, avant de livrer un CV ciblé (`profiles/<slug>.json` avec une
 2. Si le contenu déborde, la correction est de **couper**, jamais de
    compresser en dessous du plancher de lisibilité déjà établi (6,8 pt de
    corps minimum, voir `README.md` § Design system). Réduire `limits`
-   (moins de puces, moins de compétences par groupe, moins d'expériences)
-   ou baisser légèrement `density` (0,9 à 1,1) — jamais l'inverse.
+   (moins de puces par expérience, moins de compétences par groupe) ou
+   baisser légèrement `density` (0,9 à 1,1) — jamais l'inverse. Les
+   planchers du § suivant ne sont pas un levier disponible : on ne réduit
+   jamais `experiences`, `education` ou `skillGroups` pour gagner de la
+   place, quelle que soit l'offre.
 3. Ne jamais résoudre un débordement en inventant une version « plus
    courte » d'un fait qui perdrait en exactitude — `npm run verify`
    vérifie déjà qu'une variante `short` ne peut que retirer des mots,
@@ -34,6 +37,38 @@ Concrètement, avant de livrer un CV ciblé (`profiles/<slug>.json` avec une
 jamais envoyée à un employeur. Il n'est pas soumis à cette contrainte s'il
 venait à dépasser une page en accumulant du contenu — mais en pratique il
 doit lui aussi rester lisible et compact.
+
+## Planchers non négociables du ciblage
+
+Consigne de Guilhem : cibler une offre ne réduit jamais le **squelette** du
+CV, seulement ce qu'il y a *à l'intérieur*. Concrètement, quel que soit le
+profil :
+
+1. **4 groupes de compétences, toujours.** Jamais 3, même si un groupe
+   (« Développement front-end », par exemple) n'a rien à voir avec
+   l'offre. Seuls les items *à l'intérieur* d'un groupe varient
+   (`skillsPerGroup`).
+2. **Les 3 expériences pro, toujours, avec leur titre intact.** On ne
+   retire jamais INRAP, Elapsio ou C2RMF d'un CV ciblé. Seul le contenu —
+   quelles puces parmi celles de chaque expérience — varie selon l'offre
+   (`bulletsPerItem`, scoring des puces).
+3. **2 projets minimum.** Aujourd'hui la bibliothèque n'en compte que
+   deux (TheBookClub, Wakey) : les deux sont donc toujours montrés. Si un
+   troisième projet rejoint `src/content/projects/`, le moteur pourra
+   choisir les deux plus pertinents plutôt que d'être forcé à en montrer
+   trois.
+4. **Les 3 formations, toujours, jamais retouchées.** Master, Bachelor
+   Communication, Licence Histoire apparaissent sur tout CV, dans cet
+   ordre, sans exception.
+
+C'est appliqué mécaniquement dans `src/lib/select.ts` (constante
+`MIN_KEEP`, passée à chaque appel de `pick()` pertinent) : un `limits` de
+profil qui demanderait moins est silencieusement relevé au plancher, et un
+`drop` visant l'un de ces id est ignoré plutôt qu'appliqué — voir le
+panneau de sélection à l'écran, qui trace ces cas comme
+« drop ignoré : plancher non négociable ». Ne pas contourner ce
+mécanisme en écrivant un `profiles/*.json` qui tente de descendre en
+dessous ; il n'aura aucun effet, autant ne pas le faire.
 
 ## Le bandeau de compétences (`SkillsPanel`)
 

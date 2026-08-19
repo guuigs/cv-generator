@@ -3,7 +3,7 @@
   "offer": {
     "title": "Product Designer (UX/UI)",
     "company": "Ministère de la Justice — Direction de programme IA",
-    "notes": "Product Designer (UX/UI), DPIA — ministère de la Justice. Ref 2026-2381744, candidature avant le 11/09/2026.\n\nPoste centré sur la conception de parcours et la user research (l'UI passe par le DSFR, le système de design de l'État) — le groupe « Développement front-end » sort donc du CV : aucune ligne de code n'est demandée ici, et le montrer aurait dilué le reste. RGAA, recherche utilisateur et IA appliquée (LLM) sont épinglés : nommés explicitement dans l'annonce.\n\nÉcart réel, à savoir avant de candidater : l'annonce demande « minimum 5 ans d'expérience en tant que Product Designer ou UX Designer ». Le CV en couvre environ 3 (2023-2026), en grande partie en alternance. Rien sur le CV ne masque cet écart — il n'y a rien à masquer, les dates parlent d'elles-mêmes. À anticiper en lettre de motivation plutôt qu'à espérer qu'il passe inaperçu."
+    "notes": "Product Designer (UX/UI), DPIA — ministère de la Justice. Ref 2026-2381744, candidature avant le 11/09/2026.\n\nPoste centré sur la conception de parcours et la user research (l'UI passe par le DSFR, le système de design de l'État). RGAA, recherche utilisateur et conception de produit à base de LLM sont épinglés : nommés explicitement dans l'annonce. Les 4 groupes de compétences et les 2 projets restent tous affichés (règle du générateur) — seuls les items sélectionnés à l'intérieur de chacun varient selon l'annonce.\n\nÉcart réel, à savoir avant de candidater : l'annonce demande « minimum 5 ans d'expérience en tant que Product Designer ou UX Designer ». Le CV en couvre environ 3 (2023-2026), en grande partie en alternance. Rien sur le CV ne masque cet écart — il n'y a rien à masquer, les dates parlent d'elles-mêmes. À anticiper en lettre de motivation plutôt qu'à espérer qu'il passe inaperçu."
   },
   "keywords": [
     {
@@ -117,9 +117,9 @@
   ],
   "limits": {
     "experiences": 3,
-    "projects": 1,
-    "education": 2,
-    "skillGroups": 3,
+    "projects": 2,
+    "education": 3,
+    "skillGroups": 4,
     "bulletsPerItem": 3,
     "skillsPerGroup": 6
   },

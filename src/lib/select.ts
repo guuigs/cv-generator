@@ -69,6 +69,28 @@ const DEFAULT_LIMITS = {
 } as const;
 
 /**
+ * Planchers non négociables, quel que soit le profil.
+ *
+ * Consigne de Guilhem : l'inventaire d'expériences, de formations et de
+ * groupes de compétences ne se réduit jamais pour cibler une offre — seul
+ * le contenu *à l'intérieur* (puces d'expérience, compétences d'un groupe)
+ * varie. Les projets ont un plancher (minimum 2), pas un carcan : si la
+ * bibliothèque en accueille un jour un troisième, le moteur pourra choisir
+ * les deux meilleurs plutôt que d'être forcé d'en montrer trois.
+ *
+ * Appliqués dans `selectCv`, jamais contournables par `profiles/*.json`
+ * (ni un `limits` trop bas, ni un `drop` sur l'un de ces id) : un profil
+ * ne peut vouloir moins que ça, seulement un moteur mal écrit pourrait le
+ * permettre par erreur — ces constantes rendent cette erreur impossible.
+ */
+const MIN_KEEP = {
+  experiences: 3,
+  projects: 2,
+  education: 3,
+  skillGroups: 4,
+} as const;
+
+/**
  * Sélectionne, ordonne et tronque le contenu en fonction de l'offre.
  *
  * Invariant : la fonction ne produit **aucun texte**. Elle ne fait que choisir
@@ -84,15 +106,25 @@ export function selectCv(profile: CvProfile, identity: Identity = library.identi
 
   const headline = resolveHeadline(profile, identity);
 
-  /** Trie par score, garde les `n` meilleurs, puis restaure l'ordre d'origine. */
+  /**
+   * Trie par score, garde les meilleurs, puis restaure l'ordre d'origine.
+   *
+   * `minKeep`, quand fourni, protège la catégorie entière : le plancher
+   * l'emporte sur un `limits` trop bas, et un `drop` visant l'un de ces id
+   * est ignoré (tracé, mais sans effet) plutôt que silencieusement appliqué.
+   */
   function pick<T extends { id: string; pinned?: boolean }>(
     all: T[],
     n: number,
     score: (b: T) => { score: number; matched: Tag[] },
     label: string,
+    minKeep = 0,
   ): Array<Scored<T>> {
+    const protectedIds = minKeep > 0 ? new Set(all.map((b) => b.id)) : new Set<string>();
+    const effectiveN = Math.max(n, minKeep);
+
     const scored = all
-      .filter((b) => !drop.has(b.id))
+      .filter((b) => protectedIds.has(b.id) || !drop.has(b.id))
       .map((b, index) => {
         const s = score(b);
         const forced = pin.has(b.id) || b.pinned === true;
@@ -100,22 +132,23 @@ export function selectCv(profile: CvProfile, identity: Identity = library.identi
       });
 
     const keep = new Set(
-      [...scored].sort((a, b) => b.score - a.score).slice(0, n).map((s) => s.block.id),
+      [...scored].sort((a, b) => b.score - a.score).slice(0, effectiveN).map((s) => s.block.id),
     );
 
     for (const s of scored) {
+      const droppedButProtected = drop.has(s.block.id) && protectedIds.has(s.block.id);
       trace.push({
         id: s.block.id,
         kept: keep.has(s.block.id),
         score: Math.round(s.score * 100) / 100,
         matched: s.matched,
-        reason: drop.has(s.block.id)
-          ? "exclu par le profil (drop)"
+        reason: droppedButProtected
+          ? "drop ignoré : plancher non négociable"
           : s.forced
             ? "épinglé"
             : keep.has(s.block.id)
-              ? `retenu (top ${n} ${label})`
-              : `écarté (hors top ${n} ${label})`,
+              ? `retenu (top ${effectiveN} ${label})`
+              : `écarté (hors top ${effectiveN} ${label})`,
       });
     }
     for (const id of drop) {
@@ -153,6 +186,7 @@ export function selectCv(profile: CvProfile, identity: Identity = library.identi
     limits.experiences,
     (e) => scoreOf({ tags: e.tags, weight: e.weight, text: expText(e) }, kws),
     "expériences",
+    MIN_KEEP.experiences,
   ).map((s) => ({ ...s, bullets: pickBullets(s.block.bullets, useShort) }));
 
   const projects = pick(
@@ -160,6 +194,7 @@ export function selectCv(profile: CvProfile, identity: Identity = library.identi
     limits.projects,
     (p) => scoreOf({ tags: p.tags, weight: p.weight, text: projText(p) }, kws),
     "projets",
+    MIN_KEEP.projects,
   ).map((s) => ({ ...s, bullets: pickBullets(s.block.bullets, useShort) }));
 
   const educationSel = pick(
@@ -167,6 +202,7 @@ export function selectCv(profile: CvProfile, identity: Identity = library.identi
     limits.education,
     (e) => scoreOf({ tags: e.tags, weight: e.weight, text: eduText(e) }, kws),
     "formations",
+    MIN_KEEP.education,
   );
 
   const skillGroups = pick(
@@ -174,6 +210,7 @@ export function selectCv(profile: CvProfile, identity: Identity = library.identi
     limits.skillGroups,
     (g) => scoreOf({ tags: g.tags, weight: g.weight, text: groupText(g) }, kws),
     "groupes de compétences",
+    MIN_KEEP.skillGroups,
   ).map((s) => ({ ...s, skills: pickSkills(s.block, kws, drop, limits.skillsPerGroup, pin) }));
 
   return {

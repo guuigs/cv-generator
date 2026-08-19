@@ -1,5 +1,5 @@
 {
-  "slug": "default",
+  "slug": "exemple-design-system",
   "identity": {
     "name": "Guilhem Terrier",
     "portfolio": {
@@ -22,18 +22,18 @@
       ]
     ]
   },
-  "headline": "UX/UI designer - brand designer - graphic designer",
+  "headline": "UX/UI designer",
   "skillGroups": [
     {
       "title": "UX Design",
       "skills": [
         "Recherche utilisateur (interviews, tests, questionnaires)",
-        "User flows",
         "Wireframing",
         "Prototypage",
         "Design inclusif",
         "Accessibilité (RGAA)",
-        "Audit UX"
+        "Architecture de l'information",
+        "Recette et tests fonctionnels"
       ]
     },
     {
@@ -56,7 +56,7 @@
         "Tailwind CSS",
         "Supabase",
         "Git/GitHub",
-        "Modélisation de base de données relationnelle"
+        "Développement iOS et publication App Store"
       ]
     },
     {
@@ -99,8 +99,7 @@
       "dates": "2023 – 2025",
       "bullets": [
         "+100 % de trafic en 2 ans : analyse des comportements utilisateurs (analytics), restructuration de l'architecture d'information et optimisation de l'accessibilité (RGAA) et du référencement de l'ensemble des pages du site.",
-        "Participation aux ateliers de co-conception avec l'institution et le prestataire pour améliorer le CMS (Drupal) : recueil de besoins, spécifications fonctionnelles, tests, conformité RGPD.",
-        "Refonte des processus de publication en lien avec les différents départements scientifiques du centre."
+        "Participation aux ateliers de co-conception avec l'institution et le prestataire pour améliorer le CMS (Drupal) : recueil de besoins, spécifications fonctionnelles, tests, conformité RGPD."
       ]
     }
   ],

@@ -47,8 +47,8 @@ export function SkillsPanel({
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-          columnGap: "20pt",
-          rowGap: "calc(13pt * var(--density))",
+          columnGap: "16pt",
+          rowGap: "calc(9pt * var(--density))",
           alignItems: "start",
         }}
       >

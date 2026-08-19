@@ -8,6 +8,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
+import { PDFDocument } from "pdf-lib";
 import { launch } from "./browser";
 import { startServer } from "./dev-server";
 import { listProfileSlugs } from "../src/lib/profiles";
@@ -44,20 +45,30 @@ async function main() {
       }
       await page.evaluate(() => document.fonts.ready);
 
-      // Contrôle de débordement avant export : un CV sur 2 pages est un bug.
+      // Repère indicatif, mesuré en écran (min-height) : utile pour le message
+      // d'erreur, mais PAS le juge de paix — le rendu d'impression (.cv-page en
+      // hauteur fixe, @media print) peut reflow différemment (largeur de ligne,
+      // retour à la ligne d'une puce) et donner un nombre de pages différent de
+      // ce que laissait croire la mesure DOM. Voir le contrôle après export.
       const height = await page.evaluate(() => {
         const el = document.querySelector(".cv-page");
         return el ? el.getBoundingClientRect().height : 0;
       });
       const excessPt = height / PT - A4_HEIGHT_PT;
-      if (excessPt > 1) {
-        overflowed += 1;
-        console.warn(`  ! ${slug} — débordement de ${excessPt.toFixed(0)}pt (≈ ${(excessPt / A4_HEIGHT_PT * 100).toFixed(0)} % de page)`);
-      }
 
       const pdf = path.join(outDir, `CV-Guilhem-Terrier-${slug}.pdf`);
       await page.pdf({ path: pdf, format: "A4", printBackground: true, preferCSSPageSize: true });
-      console.log(`  ✓ ${path.relative(process.cwd(), pdf)}`);
+
+      // Seul juge de paix : le nombre de pages du PDF réellement produit.
+      const pageCount = (await PDFDocument.load(fs.readFileSync(pdf))).getPageCount();
+      if (pageCount > 1) {
+        overflowed += 1;
+        console.warn(
+          `  ! ${slug} — ${pageCount} pages (repère écran : ${excessPt > 0 ? `+${excessPt.toFixed(0)}pt` : "page pleine"})`,
+        );
+      } else {
+        console.log(`  ✓ ${path.relative(process.cwd(), pdf)}`);
+      }
 
       if (png) {
         const el = await page.$(".cv-page");

@@ -18,7 +18,7 @@ export default async function CvPage({ params }: { params: Promise<{ slug: strin
   const model = selectCv(loadProfile(slug));
 
   return (
-    <main style={{ display: "flex", gap: "32px", padding: "32px", alignItems: "flex-start", justifyContent: "center" }}>
+    <main className="cv-shell" style={{ display: "flex", gap: "32px", padding: "32px", alignItems: "flex-start", justifyContent: "center" }}>
       <div className="no-print" style={{ width: "300px", flex: "none", position: "sticky", top: "32px" }}>
         <div style={{ display: "flex", gap: "8px", marginBottom: "20px" }}>
           <PrintButton />

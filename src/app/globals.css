@@ -22,6 +22,13 @@
   --page-w: 595.28pt;
   --page-h: 841.89pt;
   --page-margin: 25pt;
+  /* Marge de sécurité, en plus de --page-margin, réservée en bas de page.
+     Le rendu écran (utilisé pour détecter un débordement) et le rendu
+     d'impression (utilisé pour produire le PDF) ne reflowent pas
+     nécessairement de façon identique au pt près — une puce peut gagner ou
+     perdre une ligne de large de colonne selon le moteur. Ces 8pt absorbent
+     cet écart avant qu'il ne devienne une deuxième page. */
+  --page-safety: 8pt;
 
   /* Densité : 1 = fidèle à la référence. Le profil peut la resserrer. */
   --density: 1;
@@ -78,7 +85,7 @@ body {
   position: relative;
   width: var(--page-w);
   min-height: var(--page-h);
-  padding: var(--page-margin);
+  padding: var(--page-margin) var(--page-margin) calc(var(--page-margin) + var(--page-safety));
   background: var(--color-paper);
   color: var(--color-ink);
   /* Colonne flex : chaque section garde sa taille naturelle (flex-shrink: 0,
@@ -116,12 +123,25 @@ body {
 @media print {
   html, body { background: #fff; }
   .no-print { display: none !important; }
+  /* Le shell de démo (sidebar + centrage) garde 32px de padding en
+     impression si on ne l'annule pas explicitement — Chromium ajoute alors
+     une page vide avant même de regarder le contenu du CV. `!important`
+     comme `.no-print` ci-dessus : son style est posé inline sur l'élément
+     (display:flex; padding:32px; gap:32px), donc plus spécifique qu'une
+     règle de classe, qui ne l'emporterait jamais sans lui. */
+  .cv-shell {
+    display: block !important;
+    padding: 0 !important;
+    gap: 0 !important;
+  }
   .cv-page {
     box-shadow: none;
     margin: 0;
     width: var(--page-w);
     height: var(--page-h);
-    break-after: page;
+    /* Jamais de break-after ici : il n'y a toujours qu'un seul .cv-page par
+       document imprimé (un profil = un export). Le poser forçait une page
+       vide en plus à chaque export, y compris quand tout tenait déjà. */
   }
   .cv-page::after { display: none; }
   * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }

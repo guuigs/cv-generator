@@ -1,0 +1,133 @@
+{
+  "slug": "dpia-justice",
+  "offer": {
+    "title": "Product Designer (UX/UI)",
+    "company": "Ministère de la Justice — Direction de programme IA",
+    "notes": "Product Designer (UX/UI), DPIA — ministère de la Justice. Ref 2026-2381744, candidature avant le 11/09/2026.\n\nPoste centré sur la conception de parcours et la user research (l'UI passe par le DSFR, le système de design de l'État) — le groupe « Développement front-end » sort donc du CV : aucune ligne de code n'est demandée ici, et le montrer aurait dilué le reste. RGAA, recherche utilisateur et IA appliquée (LLM) sont épinglés : nommés explicitement dans l'annonce.\n\nÉcart réel, à savoir avant de candidater : l'annonce demande « minimum 5 ans d'expérience en tant que Product Designer ou UX Designer ». Le CV en couvre environ 3 (2023-2026), en grande partie en alternance. Rien sur le CV ne masque cet écart — il n'y a rien à masquer, les dates parlent d'elles-mêmes. À anticiper en lettre de motivation plutôt qu'à espérer qu'il passe inaperçu."
+  },
+  "keywords": [
+    {
+      "term": "agents",
+      "weight": 0.9
+    },
+    {
+      "term": "cadrage",
+      "weight": 0.9
+    },
+    {
+      "term": "design",
+      "weight": 0.9
+    },
+    {
+      "term": "outils",
+      "weight": 0.9
+    },
+    {
+      "term": "produit",
+      "weight": 0.9
+    },
+    {
+      "term": "recherche",
+      "weight": 0.9
+    },
+    {
+      "term": "user research",
+      "weight": 0.9
+    },
+    {
+      "term": "autonomie",
+      "weight": 0.75
+    },
+    {
+      "term": "conception",
+      "weight": 0.75
+    },
+    {
+      "term": "intelligence artificielle",
+      "weight": 0.75
+    },
+    {
+      "term": "llm",
+      "weight": 0.75
+    },
+    {
+      "term": "redaction",
+      "weight": 0.75
+    },
+    {
+      "term": "systeme",
+      "weight": 0.75
+    },
+    {
+      "term": "accessibilite",
+      "weight": 0.55
+    },
+    {
+      "term": "besoins",
+      "weight": 0.55
+    },
+    {
+      "term": "cartographie",
+      "weight": 0.55
+    },
+    {
+      "term": "collaboration",
+      "weight": 0.55
+    },
+    {
+      "term": "culture",
+      "weight": 0.55
+    },
+    {
+      "term": "deploiement",
+      "weight": 0.55
+    },
+    {
+      "term": "figma",
+      "weight": 0.55
+    },
+    {
+      "term": "perimetre",
+      "weight": 0.55
+    },
+    {
+      "term": "prototypage",
+      "weight": 0.55
+    },
+    {
+      "term": "recherche utilisateur",
+      "weight": 0.55
+    },
+    {
+      "term": "rgaa",
+      "weight": 0.55
+    },
+    {
+      "term": "secteur public",
+      "weight": 0.55
+    },
+    {
+      "term": "tests",
+      "weight": 0.55
+    },
+    {
+      "term": "tests utilisateurs",
+      "weight": 0.55
+    }
+  ],
+  "limits": {
+    "experiences": 3,
+    "projects": 1,
+    "education": 2,
+    "skillGroups": 3,
+    "bulletsPerItem": 3,
+    "skillsPerGroup": 6
+  },
+  "density": 1,
+  "headline": "UX/UI designer",
+  "pin": [
+    "skill.a11y",
+    "skill.user-research",
+    "skill.llm-product"
+  ]
+}

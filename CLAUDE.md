@@ -39,16 +39,19 @@ doit lui aussi rester lisible et compact.
 
 Les compétences ne sont jamais une grille de taille fixe posée à la main :
 elles passent par `src/components/cv/SkillsPanel.tsx`, un composant
-générique qui vise **1/5 de la hauteur d'une page A4** (`--skills-panel-h`
-dans `globals.css`, dérivé par `calc(var(--page-h) / 5)` — jamais un chiffre
-en dur). C'est un budget, pas une contrainte dure : `.cv-page` est une
-colonne flex où seul ce bandeau grandit (`flex-grow: 1`, plafonné à son
-budget) pour absorber l'espace inutilisé ; l'en-tête et chaque section
-gardent leur taille naturelle (`flex-shrink: 0`) et ne se compressent
-jamais pour cacher un débordement. Sur un CV déjà plein (le profil
-`default`, entre autres), il n'y a rien à absorber et le bandeau reste à sa
-taille naturelle — la règle des une-page-pour-un-CV-ciblé ci-dessus garde
-la priorité absolue sur ce budget.
+générique **plafonné à 1/5 de la hauteur d'une page A4**
+(`--skills-panel-h` dans `globals.css`, dérivé par `calc(var(--page-h) /
+5)` — jamais un chiffre en dur). C'est un plafond à ne jamais dépasser,
+jamais un objectif à remplir de force : le bandeau garde sa taille
+naturelle, exactement comme l'en-tête et chaque section
+(`flex-shrink: 0` partout, rien ne se comprime jamais pour cacher un
+débordement). Une première version le faisait grandir (`flex-grow`) pour
+absorber l'espace laissé par le reste de la page — l'effet était invisible
+sur un CV déjà plein (le profil `default`), mais sur un CV ciblé, où
+`limits` retient forcément moins de contenu, le bandeau gonflait dans un
+vide bien visible avant les autres sections. Ne pas réintroduire ce
+mécanisme : un CV ciblé qui laisse du blanc en bas de page, après les
+formations, n'est pas un défaut à corriger.
 
 La mise en page interne (colonnes, espacement) s'adapte au nombre de
 groupes réellement sélectionnés — jamais figée sur 2×2. Si une future

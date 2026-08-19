@@ -2,21 +2,25 @@ import type { SkillBlock, SkillGroupBlock } from "@/lib/types";
 import { SkillGroup } from "./SkillGroup";
 
 /**
- * Bandeau de compétences — un budget d'espace, pas une grille figée.
+ * Bandeau de compétences — plafonné à 1/5 de page, jamais forcé à l'atteindre.
  *
- * Règle de mise en page : ce composant vise `--skills-panel-h`, soit 1/5 de
- * la hauteur d'une page A4 (voir globals.css). C'est un objectif, jamais une
- * contrainte dure — le générateur ne clippe ni ne masque de contenu pour
- * l'atteindre. Sur un CV maître (tout le contenu, toutes les sections
- * pleines), la page peut ne laisser que peu de marge et le bandeau restera
- * en dessous du budget ; sur un CV ciblé, où `limits` réduit généralement
- * les expériences et projets, il s'en approche et en profite pour respirer.
- * Dans les deux cas, le seul garde-fou qui compte reste celui de la page
- * entière : `npm run pdf` échoue si elle déborde.
+ * Première version : ce composant grandissait (`flex-grow`) pour absorber
+ * l'espace laissé libre par le reste de la page, jusqu'à ce budget. Sur un
+ * CV maître, bien rempli, l'effet était invisible. Sur un CV ciblé — moins
+ * d'expériences et de projets retenus, donc plus de place libre — grandir
+ * jusqu'au plafond a produit un bloc de compétences flottant dans un vide
+ * bien visible, centré ou non : ça se lisait comme une maquette cassée, pas
+ * comme de la respiration.
+ *
+ * Le bandeau garde donc sa taille naturelle, exactement comme l'en-tête et
+ * chaque section — `--skills-panel-h` (1/5 de la hauteur d'une page A4,
+ * globals.css) reste le plafond documenté à ne jamais dépasser, jamais un
+ * objectif à remplir de force. Un CV ciblé qui laisse un peu de blanc en
+ * bas de page, après les formations, n'est pas un défaut : c'est un CV qui
+ * ne dit que ce qu'il y a à dire.
  *
  * La mise en page interne s'adapte au nombre de groupes réellement
- * sélectionnés — jamais figée sur 4 colonnes ou 2×2 — et centre le contenu
- * verticalement dans le budget quand il y a de la place à revendre.
+ * sélectionnés — jamais figée sur 4 colonnes ou 2×2.
  */
 export function SkillsPanel({
   groups,
@@ -30,32 +34,18 @@ export function SkillsPanel({
     <div
       style={{
         marginTop: "var(--gap-section)",
-        // Grandit pour absorber l'espace inutilisé, jamais au-delà de son
-        // budget (1/5 de page) ni en dessous de sa taille naturelle : quand
-        // il n'y a rien à absorber (CV déjà plein), ce triplet ne change
-        // rien et la page reste celle que son contenu impose réellement.
-        flexGrow: 1,
         flexShrink: 0,
-        flexBasis: "auto",
         maxHeight: `calc(var(--skills-panel-h) * var(--density))`,
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
+        display: "grid",
+        gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
+        columnGap: "16pt",
+        rowGap: "calc(9pt * var(--density))",
+        alignItems: "start",
       }}
     >
-      <div
-        style={{
-          display: "grid",
-          gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))`,
-          columnGap: "16pt",
-          rowGap: "calc(9pt * var(--density))",
-          alignItems: "start",
-        }}
-      >
-        {groups.map((g) => (
-          <SkillGroup key={g.block.id} group={g.block} skills={g.skills} />
-        ))}
-      </div>
+      {groups.map((g) => (
+        <SkillGroup key={g.block.id} group={g.block} skills={g.skills} />
+      ))}
     </div>
   );
 }

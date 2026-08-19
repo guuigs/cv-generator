@@ -207,6 +207,8 @@ position en points de chaque repère, pour comparer au PDF de référence.
 | `npm run verify` | contrôle anti-mensonge (`-- --approve` pour valider un changement de contenu) |
 | `npm run pdf [slug] [--png]` | export PDF (et PNG) dans `export/` |
 | `npm run calibrate [slug]` | position en pt des repères de mise en page |
+| `npm run dossier` | export du dossier de compétences interne (`export/Dossier-Guilhem-Terrier.pdf`) |
+| `npm run dump-model [slug]` | export JSON du CV sélectionné, pour les planches `design/` |
 | `npm run check` | typecheck + verify + build |
 
 L'export PDF passe par Chromium (Playwright). Si le binaire n'est pas trouvé :

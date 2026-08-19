@@ -36,11 +36,16 @@
   /* Inventaire de compétences : Geist plutôt que mono, cf. SkillGroup.tsx */
   --t-skill: 8.25pt;
   --lh-skill: 11pt;
+  /* Règle de mise en page, pas un chiffre en dur : le bandeau de
+     compétences vise 1/5 de la hauteur d'une page A4. C'est un budget —
+     SkillsPanel.tsx s'en approche sans jamais forcer le contenu, ni pousser
+     la page au-delà d'une feuille. Voir CLAUDE.md § composant compétences. */
+  --skills-panel-h: calc(var(--page-h) / 5);
 
   /* Rythme vertical */
   --lh-body: 12pt;
   --lh-item: 15pt;
-  --gap-section: calc(21pt * var(--density));
+  --gap-section: calc(19pt * var(--density));
   --gap-title: calc(13pt * var(--density));
   --gap-entry: calc(11.5pt * var(--density));
   --gap-bullets: calc(3pt * var(--density));
@@ -76,6 +81,15 @@ body {
   padding: var(--page-margin);
   background: var(--color-paper);
   color: var(--color-ink);
+  /* Colonne flex : chaque section garde sa taille naturelle (flex-shrink: 0,
+     posé section par section) — rien ne se comprime jamais pour cacher un
+     débordement. Seul SkillsPanel grandit (flex-grow: 1) pour absorber
+     l'espace inutilisé, plafonné à son propre budget. Sur un CV déjà plein
+     (le maître, par exemple), il n'y a rien à absorber : ce mécanisme ne
+     fait alors rien, et le débordement — s'il y en a un — reste entier et
+     détectable par le garde-fou de `scripts/export-pdf.ts`. */
+  display: flex;
+  flex-direction: column;
   /* La hauteur d'une page est une contrainte de design, pas un accident :
      le repère ci-dessous matérialise la limite à l'écran. */
   box-shadow: 0 1pt 3pt rgb(0 0 0 / 0.06), 0 12pt 32pt rgb(0 0 0 / 0.10);
@@ -115,3 +129,14 @@ body {
 
 /* Rien ne doit se couper au milieu d'une entrée. */
 .cv-entry { break-inside: avoid; }
+
+/* ------------------------------------------------------------------ */
+/* Dossier de compétences — document interne, multi-pages, flowing.    */
+/* Les marges de page répétées viennent de l'option `margin` de        */
+/* Playwright (scripts/export-dossier.ts), pas de @page : c'est le     */
+/* seul mécanisme qui les répète fiablement sur chaque page imprimée.  */
+/* ------------------------------------------------------------------ */
+.dossier-doc {
+  max-width: 700px;
+  margin: 0 auto;
+}

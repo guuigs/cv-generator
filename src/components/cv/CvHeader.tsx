@@ -7,7 +7,7 @@ export function CvHeader({ identity, headline }: { identity: Identity; headline:
     .filter((l) => l.length > 0);
 
   return (
-    <header style={{ display: "flex", gap: "var(--portrait-gap)", alignItems: "flex-start" }}>
+    <header style={{ display: "flex", gap: "var(--portrait-gap)", alignItems: "flex-start", flexShrink: 0 }}>
       {identity.portrait ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
@@ -30,14 +30,14 @@ export function CvHeader({ identity, headline }: { identity: Identity; headline:
           {identity.name}
         </h1>
 
-        <p style={{ fontSize: "var(--t-title)", fontWeight: 400, lineHeight: 1.15, marginTop: "6pt", letterSpacing: "-0.005em" }}>
+        <p style={{ fontSize: "var(--t-title)", fontWeight: 400, lineHeight: 1.15, marginTop: "5pt", letterSpacing: "-0.005em" }}>
           {headline}
         </p>
 
         {/* Ligne de contact en Geist 9 pt : arbitrage de Guilhem sur maquette.
             Le mono y coûtait de la lisibilité sans rien apporter — ce sont des
             mots, pas des codes. Les dates et organisations, elles, restent mono. */}
-        <div style={{ marginTop: "9pt", display: "flex", flexDirection: "column", gap: "1pt" }}>
+        <div style={{ marginTop: "7pt", display: "flex", flexDirection: "column", gap: "1pt" }}>
           {lines.map((line, i) => (
             <div key={i} style={{ lineHeight: "12pt", fontSize: "9pt" }}>
               {line.map((c, j) => (
@@ -51,7 +51,7 @@ export function CvHeader({ identity, headline }: { identity: Identity; headline:
         </div>
 
         {identity.portfolio ? (
-          <p style={{ marginTop: "8pt", display: "flex", alignItems: "baseline", gap: "6pt" }}>
+          <p style={{ marginTop: "7pt", display: "flex", alignItems: "baseline", gap: "6pt" }}>
             <span style={{ fontSize: "var(--t-item)", fontWeight: 700, letterSpacing: "-0.01em" }}>
               {identity.portfolio.label} <span aria-hidden="true">→</span>
             </span>

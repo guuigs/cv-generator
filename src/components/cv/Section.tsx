@@ -11,7 +11,7 @@ export function Section({
   children: ReactNode;
 }) {
   return (
-    <section style={{ marginTop: "var(--gap-section)" }}>
+    <section style={{ marginTop: "var(--gap-section)", flexShrink: 0 }}>
       <h2
         style={{
           display: "flex",

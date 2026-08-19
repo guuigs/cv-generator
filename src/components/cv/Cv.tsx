@@ -1,7 +1,7 @@
 import type { CvModel } from "@/lib/types";
 import { CvHeader } from "./CvHeader";
 import { Section } from "./Section";
-import { SkillGroup } from "./SkillGroup";
+import { SkillsPanel } from "./SkillsPanel";
 import { ExperienceItem } from "./ExperienceItem";
 import { ProjectItem } from "./ProjectItem";
 import { EducationItem } from "./EducationItem";
@@ -18,22 +18,7 @@ export function Cv({ model }: { model: CvModel }) {
     <article className="cv-page" style={{ ["--density" as string]: String(density) }}>
       <CvHeader identity={identity} headline={headline} />
 
-      {skillGroups.length > 0 ? (
-        <div
-          style={{
-            marginTop: "var(--gap-section)",
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            columnGap: "7pt",
-            rowGap: "10pt",
-            alignItems: "start",
-          }}
-        >
-          {skillGroups.map((g) => (
-            <SkillGroup key={g.block.id} group={g.block} skills={g.skills} />
-          ))}
-        </div>
-      ) : null}
+      <SkillsPanel groups={skillGroups} />
 
       {experiences.length > 0 ? (
         <Section title="Expériences professionnelles" mark="star6">

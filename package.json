@@ -13,7 +13,8 @@
     "verify": "tsx scripts/verify.ts",
     "calibrate": "tsx scripts/measure.ts",
     "check": "npm run typecheck && npm run verify && npm run build",
-    "dump-model": "tsx scripts/dump-model.ts"
+    "dump-model": "tsx scripts/dump-model.ts",
+    "dossier": "tsx scripts/export-dossier.ts"
   },
   "dependencies": {
     "geist": "^1.7.2",

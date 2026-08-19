@@ -15,7 +15,7 @@ export function SkillGroup({ group, skills }: { group: SkillGroupBlock; skills: 
       <h3 style={{ fontSize: "var(--t-item)", fontWeight: 700, lineHeight: "12pt", letterSpacing: "-0.01em" }}>
         {group.title}
       </h3>
-      <p style={{ marginTop: "3.5pt", lineHeight: "var(--lh-skill)", fontSize: "var(--t-skill)" }}>
+      <p style={{ marginTop: "4.5pt", lineHeight: "var(--lh-skill)", fontSize: "var(--t-skill)" }}>
         {/* Une compétence ne se coupe jamais en deux : la seule césure possible
             est l'espace qui suit le point médian, lui-même collé à l'item
             précédent par une espace insécable. */}
